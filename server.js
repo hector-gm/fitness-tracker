@@ -10,3 +10,5 @@ app.use(express.static('./public'));
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+
+app.listen(PORT, () => console.log(`App listening at: http://localhost:${PORT}`));
