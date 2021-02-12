@@ -24,13 +24,13 @@ module.exports = {
         workout.exercises.push(req.body);
   
         // A forEach loop reads the duration of each exercise and adds them up for our total
-        let totalDuration = 0;
+        let totalDailyDuration = 0;
         await workout.exercises.forEach((exercise) => {
-          totalDuration += exercise.duration;
+          totalDailyDuration += exercise.duration;
         });
   
         // Assigns the variable to the object key's value
-        workout.totalDuration = totalDuration;
+        workout.totalDailyDuration = totalDailyDuration;
   
         // Saves the workout with the new exercise in its array
         await workout.save();
